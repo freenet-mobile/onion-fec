@@ -1,17 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.freenet-mobile</groupId>
     <artifactId>onion-fec</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>jar</packaging>
     <url>https://github.com/freenet-mobile/onion-fec</url>
-    <build></build>
     <repositories>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
+    <build>
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>${basedir}/bin/lib</directory>
+                <includes>
+                    <include>*.properties</include>
+                </includes>
+                <targetPath>${basedir}/target/classes/lib</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>${basedir}/bin/lib</directory>
+                <includes>
+                    <include>**/*.so</include>
+                    <include>**/*.dll</include>
+                </includes>
+                <targetPath>${basedir}/target/classes/lib</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>${basedir}/bin/lib/linux-x86_64</directory>
+                <includes>
+                    <include>*.so</include>
+                </includes>
+                <targetPath>${basedir}/target/classes/lib/linux-x86_64</targetPath>
+            </resource>
+        </resources>
+    </build>
     <dependencies>
         <dependency>
             <groupId>com.github.freenet-mobile</groupId>
