@@ -31,14 +31,6 @@
                 </includes>
                 <targetPath>${basedir}/target/classes/lib</targetPath>
             </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>${basedir}/bin/lib/linux-x86_64</directory>
-                <includes>
-                    <include>*.so</include>
-                </includes>
-                <targetPath>${basedir}/target/classes/lib/linux-x86_64</targetPath>
-            </resource>
         </resources>
     </build>
     <dependencies>
